@@ -10,7 +10,7 @@ import taskDesign as tmp
 
 searchInput = sys.argv[1] # the serach request
 
-with open("Taskmanager/tasks.txt", "r") as file:
+with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "r") as file:
         tasks = file.readlines()
         if searchInput != "" or searchInput != " ": # if the search bar is not empty the task names get checked for the search request
             tmp.form(b)

@@ -13,10 +13,10 @@ completed = sys.argv[1] # input as id to identify the task
 
 tasksNew = [] # new tasks are stored in here
 
-with open("Taskmanager/tasks.txt", "r") as file: # reads the current context of the file
+with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "r") as file: # reads the current context of the file
     tasks = file.readlines()
 
-with open("Taskmanager/tasks.txt", "w") as file: # opens the file and wipes it
+with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "w") as file: # opens the file and wipes it
     for task in tasks:
         chunks = task.split(';')
 

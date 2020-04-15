@@ -14,11 +14,11 @@ taskToDelete = sys.argv[1]
 # new tasks is a list of tasks without the deltet wich gets written into the now empty file
 newTasks = []
 
-with open("Taskmanager/tasks.txt", "r") as file:
+with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "r") as file:
     tasks = file.readlines() # get the content of the current file
 
 # open in write mode to clear the file
-with open("Taskmanager/tasks.txt", "w") as file:
+with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "w") as file:
     tmp.form(b)
     for task in tasks: # iterate trough the list of tasks
         chunks = task.split(';')
