@@ -1,3 +1,1 @@
-35;Tidy up Code of tama;true;Make the project a OOP project;15.04.2020;30.04.2020
 36;Add an other way to search for Tasks;false;Make categories or labels to search for;15.04.2020;30.04.2020
-41;Publisch tama on Github;false;;15.04.2020;30.04.2020
