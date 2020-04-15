@@ -1,0 +1,83 @@
+#!/bin/bash
+action=$1
+taskName="$2"
+note="$2"
+end=$4
+
+if [ "$action" = "cre" ]; then
+        if [ "$taskName" = "" ]; then
+            echo "Error: No Taskname given"
+
+        else
+            if [ "$note" = ""  ]; then
+                echo "Error: No Note specified"
+
+            else
+                if [ "$end" = "" ]; then
+                    echo "Error: No Deadline specified"
+
+                else
+                    python3 /home/cesar/Projekte/Python/Taskmanager/createTasks.py "$2" "$3" "$4"
+                    echo "Task created"
+
+                fi
+            fi
+        fi
+
+elif [ "$action" = "del" ]; then
+    re='^[0-9]+$'
+
+    if [ "$taskName" = "done" ]; then
+        python3 /home/cesar/Projekte/Python/Taskmanager/deleteTasks.py "$2"
+        echo "All Tasks with a true Status are deleted"
+
+    else
+        if ! [[ $taskName =~ $re ]]; then
+            echo "Error: No valid Task-ID given"
+
+        else
+            python3 /home/cesar/Projekte/Python/Taskmanager/deleteTasks.py "$2"
+            echo "Task deleted"
+
+        fi
+    fi
+
+elif [ "$action" = "ser" ]; then
+        if [ "$taskName" = "" ]; then
+            clear
+            python3 /home/cesar/Projekte/Python/Taskmanager/searchTasks.py ""
+            echo "Tasks searched"
+
+        else
+            clear
+            python3 /home/cesar/Projekte/Python/Taskmanager/searchTasks.py "$2"
+            echo "Tasks searched"
+
+        fi
+
+elif [ "$action" = "com" ]; then
+    re='^[0-9]+$'
+
+    if [[ $taskname =~ $re  ]]; then
+        echo "Error: No valid Task-ID given"
+        
+    else
+        python3 /home/cesar/Projekte/Python/Taskmanager/completeTasks.py "$2"
+        echo "Task completed"
+
+    fi
+
+else
+    if [ "$action" = ""  ]; then
+        echo "Error: tama [cre/del/ser/com] ['taskname'/ID] (['note'] [end])"
+
+    else
+        echo "Error: Invalid Command"
+
+    fi
+fi
+
+
+
+
+
