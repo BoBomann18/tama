@@ -15,8 +15,8 @@ General Info:
 Guide to set tama up in Linux:
 - First you need to download the folder Taskmanger and move it where you want to
 - Next you need to download the bash script tama which you move to your /usr/local/bin/
-- Now you need to change every line in the bash script that refers to the location of the folder taskmanger where the python files are located
-      and change it to the location your folder is stored
+- Now you need to make the file executable: sudo chmod +x tama
+- After that you need to change every line in the bash script that refers to the location of the folder taskmanger where the python files are located and change it to the location your folder is stored
 
 Guide to use tama:
 - Creating a Task:
