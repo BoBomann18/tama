@@ -1,3 +1,5 @@
+import terminalColors as b
+
 # displays the task of the given chunks 
 def displayTask(chunks,b):
     print(f"ID: {chunks[0]}")

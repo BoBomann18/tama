@@ -5,23 +5,20 @@ import taskDesign as tmp
 
 
 class Task():
-
-    def __init__(self,name,note,deadline):
-        self.name = name
-        self.note = note
-        self.deadline = deadline
-        self.status = "false"  
-        self.startDate = datetime.datetime.today().strftime ('%d.%m.%Y')
-
         
-    def createTask(self):
+        
+    def createTask(name,note,deadline):
+        status = "false"  
+        startDate = datetime.datetime.today().strftime ('%d.%m.%Y')
+        
         # creates a Task
         with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/taskid.txt","r") as file:
             taskid = file.read()
             taskid = int(taskid) + 1 # incrementing the task id
 
+
         with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "a") as file:
-            taskChunks = [str(taskid), self.name, self.status, self.note, self.startDate, self.deadline] # the chunks of the task are collected in this list
+            taskChunks = [str(taskid), name, status, note, startDate, deadline] # the chunks of the task are collected in this list
             task = ";".join(taskChunks) # the tasks chunks get joind to a list to append it to the file
             file.write(task + "\n")
 
@@ -29,7 +26,7 @@ class Task():
             file.write(str(taskid))     
 
     
-    def deleteTask(self, taskToDelete):
+    def deleteTask(taskToDelete):
         # new tasks is a list of tasks without the deletet wich gets written into the now empty file
         newTasks = []
 
@@ -63,7 +60,7 @@ class Task():
             # write the newTasks List to the file
             file.writelines(newTasks)
 
-    def completeTask(self,completed):
+    def completeTask(completed):
         tasksNew = [] # new tasks are stored in here
 
         with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "r") as file: # reads the current context of the file
@@ -90,8 +87,7 @@ class Task():
                 
             file.writelines(tasksNew) # here I write all Tasks to the know emtpy file
 
-    def searchTask(self):
-        searchInput = sys.argv[1] # the serach request
+    def searchTask(searchInput):
 
         with open("/home/cesar/Projekte/Python/Taskmanager/Taskmanager/tasks.txt", "r") as file:
                 tasks = file.readlines()
@@ -100,6 +96,7 @@ class Task():
 
                     for task in tasks:
                         chunks = task.split(';')
+
 
                         if searchInput in chunks[1]: # if the searchrequest exists in the name the task gets displayed
                             tmp.displayTask(chunks,b)
