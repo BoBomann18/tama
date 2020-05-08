@@ -1,1 +1,7 @@
 36;Add an other way to search for Tasks;false;Make categories or labels to search for;15.04.2020;30.04.2020
+44;Testenviroment for Python;false;Programming a little Texteditor for testing python code;16.04.2020;30.05.2020
+45;Programm a Texteditor;false;Programm a little text editor wich is really simple;16.04.2020;30.05.2020
+46;CSV to Json converter;false;Write a programm that converts a csv file to json;16.04.2020;30.06.2020
+47;Programm a image flipper;false;Write a programm that can flip images;16.04.2020;30.06.2020
+48;Programm that calculates the pearson correlation coefficent;false;look in r/learnprogramming for the link;16.04.2020;30.07.2020
+49;Test;false;test notiz;08.05.2020;30.05.2020

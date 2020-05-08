@@ -17,7 +17,7 @@ if [ "$action" = "cre" ]; then
                     echo "Error: No Deadline specified"
 
                 else
-                    python3 /home/cesar/Projekte/Python/Taskmanager/createTasks.py "$2" "$3" "$4"
+                    python3 /home/cesar/Projekte/Python/Taskmanager/tama.py "$1" "$2" "$3" "$4"
                     echo "Task created"
 
                 fi
@@ -28,7 +28,7 @@ elif [ "$action" = "del" ]; then
     re='^[0-9]+$'
 
     if [ "$taskName" = "done" ]; then
-        python3 /home/cesar/Projekte/Python/Taskmanager/deleteTasks.py "$2"
+        python3 /home/cesar/Projekte/Python/Taskmanager/tama.py "$1" "$2"
         echo "All Tasks with a true Status are deleted"
 
     else
@@ -36,7 +36,7 @@ elif [ "$action" = "del" ]; then
             echo "Error: No valid Task-ID given"
 
         else
-            python3 /home/cesar/Projekte/Python/Taskmanager/deleteTasks.py "$2"
+            python3 /home/cesar/Projekte/Python/Taskmanager/tama.py "$1" "$2"
             echo "Task deleted"
 
         fi
@@ -45,12 +45,12 @@ elif [ "$action" = "del" ]; then
 elif [ "$action" = "ser" ]; then
         if [ "$taskName" = "" ]; then
             clear
-            python3 /home/cesar/Projekte/Python/Taskmanager/searchTasks.py ""
+            python3 /home/cesar/Projekte/Python/Taskmanager/tama.py "$1" ""
             echo "Tasks searched"
 
         else
             clear
-            python3 /home/cesar/Projekte/Python/Taskmanager/searchTasks.py "$2"
+            python3 /home/cesar/Projekte/Python/Taskmanager/tama.py "$1" "$2"
             echo "Tasks searched"
 
         fi
@@ -62,7 +62,7 @@ elif [ "$action" = "com" ]; then
         echo "Error: No valid Task-ID given"
         
     else
-        python3 /home/cesar/Projekte/Python/Taskmanager/completeTasks.py "$2"
+        python3 /home/cesar/Projekte/Python/Taskmanager/tama.py "$1" "$2"
         echo "Task completed"
 
     fi
