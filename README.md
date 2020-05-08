@@ -1,24 +1,25 @@
+# tama
 This Programm is a Taskmanger(= tama) wich should help you help in keeping you accountable!
 Tama can create, delete, complete and search tasks. It is also pretty easy to control!
 More Features will be added soon!
 
-Content:
+## Content:
 - General Info
 - Guide to set tama up on Linux
 - Guide to use tama
 
-General Info:
+### General Info:
 - Language: Python 3.8 & Bash
 - Date: 2020
 - Author: Cesar Andres
 
-Guide to set tama up in Linux:
+### Guide to set tama up in Linux:
 - First you need to download the folder Taskmanger and move it where you want to
 - Next you need to download the bash script tama which you move to your /usr/local/bin/
-- Now you need to make the file executable: sudo chmod +x tama
+- Now you need to make the bash script executable: sudo chmod +x tama
 - After that you need to change every line in the bash script that refers to the location of the folder taskmanger where the python files are located and change it to the location your folder is stored
 
-Guide to use tama:
+### Guide to use tama:
 - Creating a Task:
     Command: tama cre "Taskname" "Note" Deadline -> creates a task
     e.g: tama cre "Do Homework" "Draw a picture of an bird" 20.12.2020 -> creates the task with these params
